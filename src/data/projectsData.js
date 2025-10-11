@@ -45,7 +45,7 @@ export const projects = [
     {
         name: "Recettes Faciles",
         description: "« Recettes Faciles » est un site de gestion de recettes simple et pratique. Les utilisateurs peuvent ajouter de nouvelles recettes et utiliser la barre de recherche pour filtrer les recettes par titre ou par ingrédients. Les données sont stockées localement dans le navigateur grâce à LocalStorage.",
-        techs: ["HTML", "CSS", "TyoeScript", "Angular"],
+        techs: ["HTML", "CSS", "TypeScript", "Angular"],
         screenshots: [recette1, recette2, recette3]
     }
 ]
