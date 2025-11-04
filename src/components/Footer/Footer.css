@@ -8,6 +8,7 @@
     align-items: center;
     gap: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: wrap;
 }
 
 .footer p,
@@ -24,6 +25,34 @@ footer .social-links {
     transition: color 0.3s;
 }
 
-footer .social-links a:hover {
+.footer .social-links a:hover {
     color: #0077cc;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+    }
+
+    .footer .social-links a {
+        margin: 0 0.3rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .footer .social-links a {
+        margin: 0 0.2rem;
+        font-size: 0.95rem;
+    }
 }

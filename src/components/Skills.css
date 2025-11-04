@@ -39,3 +39,38 @@
     gap: 2rem;
     justify-content: center;
 }
+
+@media (max-width: 1024px) {
+    .skills-section h2 {
+        font-size: 2.2rem;
+    }
+    .skills-category h3 {
+        font-size: 1.8rem;
+    }
+    .skills-cards {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 3rem 5%;
+    }
+    .skills-section h2 {
+        font-size: 2rem;
+    }
+    .skills-category h3 {
+        font-size: 1.6rem;
+    }
+    .skills-cards {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2列に */
+        gap: 1rem;
+    }
+}

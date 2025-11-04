@@ -1,7 +1,11 @@
+import { useState } from "react";
 import "./Projects.css";
 import ProjectsCard from "./ProjectsCard";
 import { projects } from "../data/projectsData";
-import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 function Projects() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,19 +14,27 @@ function Projects() {
         <section id="projects" className="projects-section">
             <h2>Projects</h2>
 
-            <div className="projects-card-wrapper">
-                <ProjectsCard {...projects[currentIndex]} />
-            </div>
-
-            <div className="project-indicators">
-                {projects.map((_, i) => (
-                    <span
-                        key={i}
-                        className={i === currentIndex ? "active" : ""}
-                        onClick={() => setCurrentIndex(i)}
-                    ></span>
+            <Swiper
+                modules={[Pagination]}
+                spaceBetween={30}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+            >
+                {projects.map((project, index) => (
+                    <SwiperSlide key={index}>
+                        <ProjectsCard {...project} />
+                    </SwiperSlide>
                 ))}
-            </div>
+            </Swiper>
+
+            <p className="projects-indicator">
+                {currentIndex + 1} / {projects.length}
+            </p>
+
+            <p className="projects-note">
+                Faites glisser pour voir les autres projets
+            </p>
         </section>
     );
 }

@@ -37,8 +37,7 @@
     transition: border-color 0.3s;
 }
 
-.contact-form input:focus
-.contact-form textarea:focus {
+.contact-form input:focus .contact-form textarea:focus {
     border-color: #3ab39a;
 }
 
@@ -62,4 +61,67 @@
 .contact-form button:hover {
     background-color: #3ab39a;
     transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .contact-section h2 {
+        font-size: 2.5rem;
+    }
+    .contact-section p {
+        font-size: 1.1rem;
+    }
+    .contact-form {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 3rem 5% 1rem 5%;
+    }
+    .contact-section h2 {
+        font-size: 2.2rem;
+    }
+    .contact-section p {
+        font-size: 1rem;
+    }
+    .contact-form {
+        max-width: 300px;
+        gap: 1.5rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+    .contact-form button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* 480px以下：スマホ向け */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 2rem 3% 1rem 3%;
+    }
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+    .contact-section p {
+        font-size: 0.95rem;
+    }
+    .contact-form {
+        max-width: 100%;
+        gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+    .contact-form button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
 }
