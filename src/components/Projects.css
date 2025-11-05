@@ -13,6 +13,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
+    top: 50% !important;
     color: #ff7f50;
     width: 40px;
     height: 40px;
@@ -21,6 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translate(-50%) !important;
+    position: absolute;
+    z-index: 10;
     transition: all 0.3s;
 }
 
@@ -172,10 +176,60 @@
 
 @media (max-width: 480px) {
     .project-card {
-        width: 90%;
-        height: 350px;
+        width: 95%;
+        height: auto;
+        padding: 1rem;
     }
+
+    .screenshot-viewer {
+        position: relative;
+    }
+
     .screenshot-viewer img {
-        max-height: 150px;
+        max-height: 160px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+        text-overflow: unset;
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .project-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .tags {
+        font-size: 0.85rem;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(17, 17, 17, 0.6);
+        border: 1px solid #ff7f50;
+        color: #ff7f50;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .nav-btn:first-of-type {
+        left: 5px;
+    }
+
+    .nav-btn:last-of-type {
+        right: 5px;
     }
 }
